@@ -31,9 +31,8 @@ class CustomCinemaAdapter(val context: TheaterFragment): RecyclerView.Adapter<Cu
     }
 
 
-    override fun getItemCount(): Int {
-        return franchise.size
-    }
+    override fun getItemCount(): Int = franchise.size
+
 
 
     inner class ViewHolder(itemView: View):RecyclerView.ViewHolder(itemView){

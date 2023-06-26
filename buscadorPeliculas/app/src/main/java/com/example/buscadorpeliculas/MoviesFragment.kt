@@ -1,6 +1,7 @@
 package com.example.buscadorpeliculas
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -21,7 +22,7 @@ class MoviesFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-
+        Log.d("created view", "Se creo la vista de peliculas")
         val rootView = inflater.inflate(R.layout.fragment_movies, container, false)
 
 
@@ -47,6 +48,7 @@ class MoviesFragment : Fragment() {
 
         recyclerViewMovies.layoutManager = LinearLayoutManager(context)
         recyclerViewMovies.adapter = adapter
+        Log.d("Movie Fragment updated", " actualizado el fragmento, ya con el adaptador")
     }
 
 

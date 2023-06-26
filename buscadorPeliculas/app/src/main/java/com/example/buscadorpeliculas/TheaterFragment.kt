@@ -5,13 +5,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 
 class TheaterFragment : Fragment() {
 
-
+    private lateinit var toptitle: TextView
 
 
     override fun onCreateView(
@@ -26,6 +27,8 @@ class TheaterFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+
         val recyclerViewFranchise = view.findViewById<RecyclerView>(R.id.franchiseRecycler)
         val adapter = CustomCinemaAdapter(this)
         recyclerViewFranchise.layoutManager = LinearLayoutManager(context)

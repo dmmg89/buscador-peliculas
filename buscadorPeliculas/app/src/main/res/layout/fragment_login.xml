@@ -20,8 +20,8 @@
 
         <ImageView
 
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
             android:src="@drawable/baseline_adb_24"
 
             />
@@ -30,7 +30,8 @@
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:text="Usuario"/>
+            android:text="Usuario"
+            />
 
         <EditText
             android:id="@+id/loginUser"
@@ -42,23 +43,26 @@
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:layout_weight="1"
-
+            android:visibility="invisible"
             android:text="Nombre"/>
 
         <EditText
             android:id="@+id/loginName"
             style="@style/EditTextLogin"
+            android:visibility="invisible"
             />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:layout_weight="1"
+            android:visibility="invisible"
             android:text="Email"/>
 
         <EditText
             android:id="@+id/loginEmail"
             style="@style/EditTextLogin"
+            android:visibility="invisible"
             />
 
         <TextView
@@ -86,7 +90,9 @@
             android:layout_height="match_parent"
             android:layout_marginRight="16dp"
             android:layout_weight="1"
-            android:text="Sin Registro"/>
+            android:text="Registrarse"
+            android:backgroundTint="@color/greyButton"
+            />
         <Button
             android:layout_width="0dp"
             android:layout_height="match_parent"

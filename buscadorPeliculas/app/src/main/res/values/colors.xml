@@ -3,4 +3,5 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="blueBackground">#3B8D97</color>
+    <color name="greyButton">#BEBBBB</color>
 </resources>
