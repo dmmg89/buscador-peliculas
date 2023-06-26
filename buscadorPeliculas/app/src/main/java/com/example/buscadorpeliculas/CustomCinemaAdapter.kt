@@ -8,13 +8,13 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
 
-class CustomCinemaAdapter: RecyclerView.Adapter<CustomCinemaAdapter.ViewHolder>() {
+class CustomCinemaAdapter(val context: TheaterFragment): RecyclerView.Adapter<CustomCinemaAdapter.ViewHolder>() {
 
-    val franchise = arrayOf("Cinemex", "Cinepolis", "CineDot")
-    val franchiseDetails = arrayOf("Detalles de cinemex", "Detalles cinepolis", "Detalles CineDot")
-    val franchiseLogo = arrayOf(R.drawable.baseline_adb_24,
-                                R.drawable.baseline_adb_24,
-                                R.drawable.baseline_adb_24)
+    val franchise = context.resources.getStringArray(R.array.franchise_names)
+    val franchiseDetails = context.resources.getStringArray(R.array.franchise_slogan)
+    val franchiseLogo = arrayOf(R.drawable.logo_cinedot,
+                                R.drawable.logo_cinepolis,
+                                R.drawable.logo_cinemex)
 
     override fun onCreateViewHolder(
         viewGroup: ViewGroup,
@@ -41,14 +41,12 @@ class CustomCinemaAdapter: RecyclerView.Adapter<CustomCinemaAdapter.ViewHolder>(
          var itemFranchise:TextView
          var itemDetails: TextView
 
-
-
         init {
             itemImage = itemView.findViewById(R.id.cinema_image)
             itemFranchise = itemView.findViewById(R.id.cinema_title)
             itemDetails = itemView.findViewById(R.id.cinema_details)
         }
-
-
     }
+
+
 }

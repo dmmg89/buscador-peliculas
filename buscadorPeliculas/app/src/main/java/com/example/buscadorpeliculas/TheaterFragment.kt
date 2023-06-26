@@ -27,7 +27,7 @@ class TheaterFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val recyclerViewFranchise = view.findViewById<RecyclerView>(R.id.franchiseRecycler)
-        val adapter = CustomCinemaAdapter()
+        val adapter = CustomCinemaAdapter(this)
         recyclerViewFranchise.layoutManager = LinearLayoutManager(context)
         recyclerViewFranchise.adapter = adapter
     }
