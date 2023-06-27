@@ -1,3 +1,3 @@
-Nombre: Buscador de Películas
+Nombre: Buscador de Películas \n
 Plataforma: Android/Kotlin
 
