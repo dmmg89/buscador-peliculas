@@ -20,10 +20,12 @@ class TopContent : Fragment() {
         val view = inflater.inflate(R.layout.fragment_top_content, container, false)
         topTextView = view?.findViewById(R.id.topTitle)!!
 
-
+        updateTextView("BIENVENID@")
             return view
 
     }
+
+
 
     public fun updateTextView(updateText:String){
         topTextView.text = updateText

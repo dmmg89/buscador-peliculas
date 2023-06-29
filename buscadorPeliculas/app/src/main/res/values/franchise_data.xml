@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="franchise_names">
+        <item>CineDot</item>
+        <item>Cinepolis</item>
+        <item>Cinemex</item>
+    </string-array>
+
+    <string-array name="franchise_slogan">
+        <item>El punto de encuentro que crea conexiones</item>
+        <item>La capital del cine</item>
+        <item>La magia del cine</item>
+    </string-array>
+
+
+
+</resources>
