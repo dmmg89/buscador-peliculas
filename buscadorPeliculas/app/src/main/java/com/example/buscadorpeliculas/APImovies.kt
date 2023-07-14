@@ -6,8 +6,8 @@ import retrofit2.http.Url
 
 interface APImovies {
 
-    @GET
-    suspend fun getMoviesAll(@Url url:String):Response<MoviesDataClass>
+    @GET("endpoint")
+    suspend fun getMoviesAll():Response<MoviesDataClass>
 
 
 }

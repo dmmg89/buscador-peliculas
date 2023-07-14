@@ -7,6 +7,8 @@
     android:layout_marginBottom="64dp"
     android:orientation="vertical"
     android:gravity="center_horizontal"
+    android:background="@color/backgroundMain"
+
     tools:context=".loginActivity">
 
 
@@ -14,9 +16,9 @@
 
     <ImageView
         android:layout_marginTop="32dp"
-        android:layout_width="72dp"
-        android:layout_height="72dp"
-        android:src="@drawable/baseline_movie_24"
+        android:layout_width="88dp"
+        android:layout_height="88dp"
+        android:src="@drawable/cintaentrada"
 
         />
 
@@ -29,13 +31,13 @@
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:visibility="invisible"
+        android:visibility="visible"
         android:text="Nombre"/>
 
     <EditText
         android:id="@+id/loginName"
         style="@style/EditTextLogin"
-        android:visibility="invisible"
+        android:visibility="visible"
         />
 
     <TextView
@@ -58,14 +60,14 @@
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:visibility="invisible"
+        android:visibility="visible"
         android:text="Email"/>
 
     <EditText
 
         android:id="@+id/loginEmail"
         style="@style/EditTextLogin"
-        android:visibility="invisible"
+        android:visibility="visible"
         />
 
     <TextView
@@ -81,6 +83,7 @@
     <EditText
         android:id="@+id/loginPassword"
         style="@style/EditTextLogin"
+        android:inputType="textPassword"
         />
 
     <LinearLayout
@@ -92,6 +95,7 @@
         android:orientation="horizontal">
 
         <Button
+            android:id="@+id/registerButton"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginRight="12dp"

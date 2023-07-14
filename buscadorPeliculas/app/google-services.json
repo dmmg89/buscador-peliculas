@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "34867543442",
+    "project_id": "buscador-funciones",
+    "storage_bucket": "buscador-funciones.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:34867543442:android:c5b561bb30cd70993ed54b",
+        "android_client_info": {
+          "package_name": "com.example.buscadorpeliculas"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "34867543442-j297oo49cn90pgs2eaju84r52sdda3of.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.buscadorpeliculas",
+            "certificate_hash": "ce3fc7d9b171d7c89f6565f9c2c596f67c084a22"
+          }
+        },
+        {
+          "client_id": "34867543442-6a0i1sntjevu303o0ib8thurroiefeaf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBLyZDRaRIhc2csscTXp5SuZqooFx2fIzk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "34867543442-6a0i1sntjevu303o0ib8thurroiefeaf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

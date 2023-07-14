@@ -4,4 +4,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="blueBackground">#3B8D97</color>
     <color name="greyButton">#BEBBBB</color>
+    <color name="backgroundMain">#EBEDEF</color>
 </resources>

@@ -1,5 +1,9 @@
 <resources>
     <string name="app_name">buscadorPeliculas</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="presentationSplash">"Bienvenid@ seas" \n \nEste es un buscador de complejos cinematográficos
+        y proyecciones de las películas actuales. \n \n
+        La aplicación utiliza servicio GPS para localizar el cine mas cercano. \n\n
+        Esperamos tengas una experiencia agradable :)</string>
 </resources>
