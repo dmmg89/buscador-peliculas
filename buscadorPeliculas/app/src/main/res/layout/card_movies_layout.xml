@@ -34,7 +34,7 @@
             android:layout_height="wrap_content"
             android:text="Pruebas"
             android:textStyle="bold"
-            android:textSize="24sp"
+            android:textSize="20sp"
             android:layout_toEndOf="@id/movie_image"
             android:layout_toRightOf="@id/movie_image"
             android:layout_alignParentTop="true"/>

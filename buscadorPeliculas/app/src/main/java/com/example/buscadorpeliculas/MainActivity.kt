@@ -1,6 +1,8 @@
 package com.example.buscadorpeliculas
 
 import android.Manifest
+import android.content.ContentValues.TAG
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.health.connect.datatypes.ExerciseRoute.Location
 import androidx.appcompat.app.AppCompatActivity
@@ -15,6 +17,8 @@ import androidx.fragment.app.Fragment
 import com.example.buscadorpeliculas.databinding.ActivityMainBinding
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding:ActivityMainBinding
@@ -38,10 +42,20 @@ class MainActivity : AppCompatActivity() {
         val topFragment = supportFragmentManager.findFragmentById(R.id.topContainer)
         val topTextView = findViewById<TextView>(R.id.topTitle)
 
+        //api
+        val retrofit = Retrofit.Builder()
+            .baseUrl("https://my-json-server.typicode.com/dmmg89/dbMovies/posts")
+            .addConverterFactory(GsonConverterFactory.create()).build()
+
+        val apiService = retrofit.create(APImovies::class.java)
 
 
 
+        val nombre = this.intent.extras?.getString("email")
+        Log.d(TAG, nombre.toString())
         replaceFragmentContent(AccountFragment())
+
+
         binding.bottomNavigationView.menu.findItem(R.id.accountBottom).setChecked(true)
         binding.bottomNavigationView.setOnItemSelectedListener {
             when (it.itemId) {

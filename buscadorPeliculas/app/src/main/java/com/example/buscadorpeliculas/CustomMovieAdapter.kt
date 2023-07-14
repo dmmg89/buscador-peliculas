@@ -17,27 +17,29 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class CustomMovieAdapter: RecyclerView.Adapter<CustomMovieAdapter.ViewHolder>() {
 
-    var moviesData = ""
+    //var moviesData = ""
 
-    val titles = mutableListOf<String>()
+    val titles = mutableListOf<String>("Spiderman: a través del spider-verso",
+                                        "Transformers: el despertar de las bestias",
+                                        "Post Mortem: fotos del más allá",
+                                        "Elementos")
 
 
-    val details = arrayOf("Detalles 1",
-                            "Detalles 2",
-                            "Detalles 3",
-                            "Detalles 4"
+    val details = arrayOf("Clasificación: A \n Duración 136 min",
+                            "Clasificación: B \n Duración: 126 min",
+                            "Clasificación: B \n Duración: 115 min",
+                             "Clasificación: A \n Duración 110 min"
                                         )
 
 
-    val images = arrayOf(R.drawable.baseline_check_circle_24,
-                        R.drawable.baseline_check_circle_24,
-                        R.drawable.baseline_check_circle_24,
-                        R.drawable.baseline_check_circle_24
-                                                            )
+    val images = arrayOf(R.drawable.spidermancartel,
+                        R.drawable.transformerscartel,
+                        R.drawable.postmortemcartel,
+                        R.drawable.elementalcartel)
 
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): ViewHolder {
-        searchByMovie()
-        Log.d("coroutine work", this.givenString(moviesData))
+//        searchByMovie()
+//        Log.d("coroutine work", this.givenString(moviesData))
         val view = LayoutInflater.from(viewGroup.context).inflate(R.layout.card_movies_layout,viewGroup,false)
         return ViewHolder(view)
     }
@@ -73,30 +75,30 @@ class CustomMovieAdapter: RecyclerView.Adapter<CustomMovieAdapter.ViewHolder>() 
             .build()
     }
 
-    private fun searchByMovie():String{
-
-        CoroutineScope(Dispatchers.IO).launch {
-            val call:Response<MoviesDataClass> = getRetrofit().create(APImovies::class.java)
-                .getMoviesAll("/cines/1/peliculas")
-
-            val movies:MoviesDataClass? = call.body()
-
-
-
-            moviesData = if (call.isSuccessful){
-                movies?.information.toString()
-            }else{
-                "sin respuesta"
-
-            }
-
-
-        }
-        return moviesData
-    }
-
-    fun givenString(cadena:String):String{
-        return moviesData
-    }
+//    private fun searchByMovie():String{
+//
+//        CoroutineScope(Dispatchers.IO).launch {
+//            val call:Response<MoviesDataClass> = getRetrofit().create(APImovies::class.java)
+//                .getMoviesAll("/cines/1/peliculas")
+//
+//            val movies:MoviesDataClass? = call.body()
+//
+//
+//
+//            moviesData = if (call.isSuccessful){
+//                movies?.information.toString()
+//            }else{
+//                "sin respuesta"
+//
+//            }
+//
+//
+//        }
+//        return moviesData
+//    }
+//
+//    fun givenString(cadena:String):String{
+//        return moviesData
+//    }
 
 }

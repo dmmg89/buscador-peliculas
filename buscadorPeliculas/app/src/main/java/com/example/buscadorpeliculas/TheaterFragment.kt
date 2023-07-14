@@ -8,6 +8,12 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.create
 
 
 class TheaterFragment : Fragment() {
@@ -33,6 +39,13 @@ class TheaterFragment : Fragment() {
         val adapter = CustomCinemaAdapter(this)
         recyclerViewFranchise.layoutManager = LinearLayoutManager(context)
         recyclerViewFranchise.adapter = adapter
+
+        CoroutineScope(Dispatchers.IO).launch {
+           /* try {
+                //val respuesta =
+            }*/
+        }
+
     }
 
 }
