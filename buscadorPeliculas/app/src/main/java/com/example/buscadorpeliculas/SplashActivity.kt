@@ -8,7 +8,7 @@ import android.os.Looper
 
 class SplashActivity : AppCompatActivity() {
 
-    private val SPLASHTIMEOUT = 4_000L
+    private val SPLASHTIMEOUT = 1_000L
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
