@@ -51,8 +51,17 @@ class loginActivity : AppCompatActivity() {
 
 
         }
-
         enterButton.setOnClickListener {
+            try {
+                Log.d(TAG,"ACCESO A LA APLICACION")
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
+            }catch (e: Exception){
+                Log.w(TAG,"APLICACION NO INICIALIZADA")
+
+        }
+        }
+        /*enterButton.setOnClickListener {
             val emailTest = emailLogin.text.toString()
             val passwordTest = passwordLogin.text.toString()
             Log.d(TAG, "Datos ingresados" + emailTest + "  " + passwordTest)
@@ -72,7 +81,7 @@ class loginActivity : AppCompatActivity() {
                     }
 
             }
-        }
+        }*/
 
 
     }

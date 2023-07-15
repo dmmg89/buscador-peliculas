@@ -40,11 +40,7 @@ class TheaterFragment : Fragment() {
         recyclerViewFranchise.layoutManager = LinearLayoutManager(context)
         recyclerViewFranchise.adapter = adapter
 
-        CoroutineScope(Dispatchers.IO).launch {
-           /* try {
-                //val respuesta =
-            }*/
-        }
+
 
     }
 
