@@ -87,11 +87,12 @@ class MainActivity : AppCompatActivity() {
 
 
         val nombre = this.intent.extras?.getString("email")
-        Log.d(TAG, nombre.toString())
-        replaceFragmentContent(AccountFragment())
+        Log.d(TAG, "usuario almacenado en el intent  " + nombre.toString())
+        replaceFragmentContent(MoviesFragment())
+        showMessage(nombre?: "Usuario no registrado ")
 
 
-        binding.bottomNavigationView.menu.findItem(R.id.accountBottom).setChecked(true)
+        binding.bottomNavigationView.menu.findItem(R.id.moviesBottom).setChecked(true)
         binding.bottomNavigationView.setOnItemSelectedListener {
             when (it.itemId) {
                 R.id.moviesBottom-> {
@@ -149,11 +150,14 @@ class MainActivity : AppCompatActivity() {
             }
     }
 
+
+
+    fun showMessage(message:String){
+        Toast.makeText(this,message, Toast.LENGTH_LONG).show()
+    }
+
 }
 
-    /*fun mostrarToast(mensaje:String){
-        Toast.makeText(Context,mensaje, Toast.LENGTH_LONG).show()
-    }*/
 
 
 

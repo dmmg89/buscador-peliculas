@@ -48,6 +48,15 @@
             android:layout_toRightOf="@id/movie_image"
             android:layout_below="@id/movie_title"/>
 
+        <Button
+            android:id="@+id/movie_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/movie_details"
+            android:layout_marginHorizontal="16dp"
+            android:drawableLeft="@drawable/baseline_local_movies_24"
+            android:layout_toEndOf="@+id/movie_image"
+            android:text="Funciones" />
 
 
     </RelativeLayout>
