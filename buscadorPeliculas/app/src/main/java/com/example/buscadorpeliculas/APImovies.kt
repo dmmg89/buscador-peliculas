@@ -11,4 +11,8 @@ interface APImovies {
     suspend fun getMoviesAll(@Path("id") postId:Int):Post
 
 
+   /* @GET("/dmmg89/dbMovies/allMovies/{id}")
+    suspend fun getMoviesNew(@Path("id") movieId:Int):
+*/
 }
+

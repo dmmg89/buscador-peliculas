@@ -4,16 +4,20 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+
 import kotlinx.coroutines.launch
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+
 
 class CustomMovieAdapter: RecyclerView.Adapter<CustomMovieAdapter.ViewHolder>() {
 
@@ -51,29 +55,34 @@ class CustomMovieAdapter: RecyclerView.Adapter<CustomMovieAdapter.ViewHolder>() 
        viewHolder.itemTitle.text = titles[position]
         viewHolder.itemDetails.text = details[position]
         viewHolder.itemImage.setImageResource(images[position])
+        viewHolder.itemButton.setOnClickListener{
+
+
+        }
+
+
     }
 
+
+    //clase interna, para declarar los elementos dentro de cada cardview
     inner class ViewHolder(itemView : View): RecyclerView.ViewHolder(itemView){
         var itemImage: ImageView
         var itemTitle: TextView
         var itemDetails: TextView
+        var itemButton : Button
 
         init {
             itemImage = itemView.findViewById(R.id.movie_image)
             itemTitle = itemView.findViewById(R.id.movie_title)
             itemDetails = itemView.findViewById(R.id.movie_details)
+            itemButton = itemView.findViewById(R.id.movie_button)
         }
 
     }
 
 
 
-    private fun getRetrofit():Retrofit{
-        return Retrofit.Builder()
-            .baseUrl("https://345105ab-ba2f-4b12-9b2d-be012361b9eb.mock.pstmn.io/")
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
-    }
+
 
 //    private fun searchByMovie():String{
 //

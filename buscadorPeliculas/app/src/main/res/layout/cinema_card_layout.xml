@@ -50,13 +50,13 @@
 
         <Button
             android:layout_width="wrap_content"
-            android:layout_height="48dp"
+            android:layout_height="54dp"
             android:layout_marginTop="16dp"
             android:layout_marginHorizontal="8dp"
             android:layout_alignParentRight="true"
             android:layout_toEndOf="@id/cinema_image"
-            android:text="Ver complejos"
-            android:textSize="16dp"
+            android:text="Ver locaciones"
+            android:textSize="12sp"
             android:layout_toRightOf="@id/cinema_image"
             android:layout_below="@id/cinema_details"
             />
