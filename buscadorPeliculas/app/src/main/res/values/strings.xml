@@ -6,4 +6,6 @@
         y proyecciones de las películas actuales. \n \n
         La aplicación utiliza servicio GPS para localizar el cine mas cercano. \n\n
         Esperamos tengas una experiencia agradable :)</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

@@ -4,28 +4,71 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_marginBottom="64dp"
+
     android:orientation="vertical"
     android:gravity="center_horizontal"
-    android:background="@color/backgroundMain"
+    android:background="@color/white"
 
-    tools:context=".loginActivity">
+    tools:context=".start.loginActivity">
+
+    <!--<ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/fondo_login"
+        android:scaleType="centerCrop"/>-->
+
+<LinearLayout
+    android:id="@+id/linearLayoutTop"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentTop="true"
+    android:orientation="horizontal"
+    android:layout_weight="0.7">
+
+    <Button
+        android:id="@+id/enterWithoutAccountButton"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:backgroundTint="@color/grey"
+        android:text="Entrar Sin Cuenta" />
+
+    <Button
+        android:id="@+id/enterWithAccountButton"
+        android:layout_width="0dp"
+        android:layout_weight="2"
+
+        android:layout_height="match_parent"
+
+        android:backgroundTint="@color/secundaryColor"
+        android:text="Entrar con Cuenta"/>
 
 
+</LinearLayout>
 
 
     <ImageView
-        android:layout_marginTop="32dp"
         android:layout_width="88dp"
         android:layout_height="88dp"
+        android:layout_marginTop="16dp"
+
         android:src="@drawable/cintaentrada"
 
+        />
+
+    <Switch
+        android:id="@+id/accountSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:textSize="14sp"
+        android:text=" ¿Ya tienes cuenta? "
+        android:checked="false"
         />
 
 
 
 
-    <TextView
+    <!--<TextView
         android:textSize="18dp"
         android:gravity="center_vertical"
         android:layout_width="wrap_content"
@@ -38,28 +81,13 @@
         android:id="@+id/loginName"
         style="@style/EditTextLogin"
         android:visibility="visible"
-        />
+        />-->
+
+
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:text="Usuario"
-        android:textSize="24dp"
-        android:gravity="center_vertical"
-        />
-
-    <EditText
-        android:id="@+id/loginUser"
-        style="@style/EditTextLogin"
-        />
-
-    <TextView
-        android:textSize="18dp"
-        android:gravity="center_vertical"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_weight="1"
+        android:id="@+id/emailLoginLabel"
+        style="@style/TextLabelLogin"
         android:visibility="visible"
         android:text="Email"/>
 
@@ -70,13 +98,24 @@
         android:visibility="visible"
         />
 
-    <TextView
-        android:textSize="18dp"
-        android:gravity="center_vertical"
 
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_weight="1"
+    <TextView
+        android:id="@+id/userLabelLogin"
+        style="@style/TextLabelLogin"
+
+        android:text="Usuario"
+
+        />
+
+    <EditText
+        android:id="@+id/userEditTextLogin"
+        style="@style/EditTextLogin"
+        />
+
+    <TextView
+        android:id="@+id/passwordLabelLogin"
+        style="@style/TextLabelLogin"
+
 
         android:text="Contraseña"/>
 
@@ -86,6 +125,7 @@
         android:inputType="textPassword"
         />
 
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -94,28 +134,45 @@
         android:layout_marginTop="16dp"
         android:orientation="horizontal">
 
+
+
         <Button
             android:id="@+id/registerButton"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginRight="12dp"
+            android:layout_marginHorizontal="24dp"
+
             android:layout_weight="1"
             android:text="Registrarse"
             android:textSize="18dp"
             android:layout_marginVertical="8dp"
-            android:backgroundTint="@color/greyButton"
+            android:backgroundTint="@color/secundaryColor"
             />
         <Button
             android:id="@+id/loginButton"
             android:layout_width="0dp"
             android:layout_marginVertical="8dp"
+            android:layout_marginHorizontal="24dp"
             android:layout_height="match_parent"
             android:layout_marginLeft="12dp"
             android:layout_weight="1"
+            android:backgroundTint="@color/primaryColor"
             android:textSize="18dp"
-            android:text="Ingresar"/>
+            android:text="Ingresar"
+            android:visibility="gone"/>
 
     </LinearLayout>
+
+    <Button
+        android:id="@+id/googleButtonLogin"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.5"
+        android:layout_marginHorizontal="64dp"
+        android:text="Google"
+
+        android:backgroundTint="@color/grey"/>
 
 </LinearLayout>
 
