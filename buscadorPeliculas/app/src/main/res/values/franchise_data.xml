@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="franchise_names">
-        <item>CineDot</item>
+        <item>Cinedot</item>
         <item>Cinepolis</item>
         <item>Cinemex</item>
     </string-array>

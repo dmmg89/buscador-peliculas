@@ -1,6 +1,8 @@
 package com.example.buscadorpeliculas.adapters
 
+import android.content.ContentValues.TAG
 import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -38,7 +40,8 @@ class CustomCinemaAdapter(val context: TheaterFragment): RecyclerView.Adapter<Cu
         holder.itemButton.setOnClickListener {
             val context = holder.itemView.context
             val intent = Intent(context, SelectedTheater::class.java)
-            intent.putExtra("Cine","Cine seleccionado")
+            intent.putExtra("Franchise",holder.itemFranchise.text)
+            Log.i(TAG,"FRANQUICIA " + holder.itemFranchise.text)
             context.startActivity(intent)
         }
 
@@ -55,12 +58,15 @@ class CustomCinemaAdapter(val context: TheaterFragment): RecyclerView.Adapter<Cu
          var itemDetails: TextView
          var itemButton: Button
 
+
+
         init {
             itemImage = itemView.findViewById(R.id.cinema_image)
             itemFranchise = itemView.findViewById(R.id.cinema_title)
             itemDetails = itemView.findViewById(R.id.cinema_details)
             itemButton = itemView.findViewById(R.id.cinema_button)
             itemButton.setBackgroundColor(itemView.context.resources.getColor(R.color.secundaryColor))
+
         }
     }
 

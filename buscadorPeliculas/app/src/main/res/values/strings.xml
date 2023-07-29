@@ -6,6 +6,10 @@
         y proyecciones de las películas actuales. \n \n
         La aplicación utiliza servicio GPS para localizar el cine mas cercano. \n\n
         Esperamos tengas una experiencia agradable :)</string>
-    <!-- TODO: Remove or change this placeholder text -->
+
+    <string name="noAccountMessage">\n Se recomienda ingresar con cuenta para poder disfrutar de la experiencia completa que puede ofrecer la aplicación. \n
+                                    \n El proceso de registro es muy rápido, aún así, puedes seguir usando la aplicación sin cuenta registrada.</string>
+
+
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

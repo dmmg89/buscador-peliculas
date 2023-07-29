@@ -1,73 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".start.AccountLoginFragment">
 
-    android:orientation="vertical"
-    android:gravity="center_horizontal"
-    android:background="@color/backLightColor"
+    <!-- TODO: Update blank fragment layout -->
 
-    tools:context=".start.loginActivity">
-
-    <!--<ImageView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/fondo_login"
-        android:scaleType="centerCrop"/>-->
-
-<LinearLayout
-    android:id="@+id/linearLayoutTop"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_alignParentTop="true"
-    android:orientation="horizontal"
-    android:layout_weight="0.5">
-
-    <Button
-        android:id="@+id/enterWithoutAccountButton"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:backgroundTint="@color/backDarkColor"
-        android:text="Entrar Sin Cuenta" />
-
-    <Button
-        android:id="@+id/enterWithAccountButton"
-        android:layout_width="0dp"
-        android:layout_weight="2"
-
-        android:layout_height="match_parent"
-
-        android:backgroundTint="@color/secundaryColor"
-        android:text="Entrar con Cuenta"/>
-
-
-</LinearLayout>
-<FrameLayout
-    android:id="@+id/frameContentLogin"
-    android:layout_width="match_parent"
-    android:layout_height="0dp"
-    android:layout_weight="8">
-
-
-
-</FrameLayout>
-
-   <!-- <ImageView
-        android:layout_width="88dp"
-        android:layout_height="88dp"
-        android:layout_marginTop="16dp"
-
-        android:src="@drawable/cintaentrada"
-
-        />
-
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
     <Switch
         android:id="@+id/accountSwitch"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
+        android:layout_weight="2"
         android:textSize="14sp"
         android:text=" ¿Ya tienes cuenta? "
         android:checked="false"
@@ -76,20 +25,6 @@
 
 
 
-    &lt;!&ndash;<TextView
-        android:textSize="18dp"
-        android:gravity="center_vertical"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:visibility="visible"
-        android:text="Nombre"/>
-
-    <EditText
-        android:id="@+id/loginName"
-        style="@style/EditTextLogin"
-        android:visibility="visible"
-        />&ndash;&gt;
 
 
 
@@ -107,18 +42,7 @@
         />
 
 
-    <TextView
-        android:id="@+id/userLabelLogin"
-        style="@style/TextLabelLogin"
 
-        android:text="Usuario"
-
-        />
-
-    <EditText
-        android:id="@+id/userEditTextLogin"
-        style="@style/EditTextLogin"
-        />
 
     <TextView
         android:id="@+id/passwordLabelLogin"
@@ -132,6 +56,20 @@
         style="@style/EditTextLogin"
         android:inputType="textPassword"
         />
+
+
+        <TextView
+            android:id="@+id/userLabelLogin"
+            style="@style/TextLabelLogin"
+
+            android:text="Confirma Contraseña"
+
+            />
+
+        <EditText
+            android:id="@+id/loginPassword2"
+            style="@style/EditTextLogin"
+            />
 
 
     <LinearLayout
@@ -181,6 +119,9 @@
         android:text="Google"
 
         android:backgroundTint="@color/grey"/>
--->
-</LinearLayout>
+    </LinearLayout>
 
+
+
+
+</FrameLayout>

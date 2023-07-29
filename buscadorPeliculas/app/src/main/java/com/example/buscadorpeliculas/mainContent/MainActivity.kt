@@ -15,11 +15,15 @@ import androidx.annotation.RequiresApi
 import androidx.core.app.ActivityCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
+import androidx.room.Room
 import com.example.buscadorpeliculas.APImovies
+import com.example.buscadorpeliculas.CinemaData
+import com.example.buscadorpeliculas.CinemaDb
 import com.example.buscadorpeliculas.R
 import com.example.buscadorpeliculas.databinding.ActivityMainBinding
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
+import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -54,7 +58,11 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
+//inicia base de datos
+        val db = Room.databaseBuilder(applicationContext,CinemaDb::class.java,"cineDb")
+            .allowMainThreadQueries()
+            .build()
+        val userDao = db.cinemaDao()
 
 
 //se establece el fragmento que contiene al título
@@ -62,7 +70,7 @@ class MainActivity : AppCompatActivity() {
         val topFragment = supportFragmentManager.findFragmentById(R.id.topContainer)
         val topTextView = findViewById<TextView>(R.id.topTitle)
 
-        lifecycleScope.launch {
+        suspend fun apiCharge(){
             try {
                 Log.i(TAG, "RESPUESTA DE API")
                 for (index in 1..10) {
@@ -72,6 +80,12 @@ class MainActivity : AppCompatActivity() {
                     val nombre = respuesta.name
                     val latitud = respuesta.latitude
                     val longitud = respuesta.longitude
+
+                    //Carga en base de datos
+
+                    val cinemaEntry = CinemaData(id= index, franchise = cadena, name = nombre, latitude = latitud,longitude = longitud)
+                    userDao.insertCinema(cinemaEntry)
+                    Log.i(TAG, "Cinema id $index Cargado en base de datos")
 
                     Log.d(TAG, "La cadena es $cadena, $nombre")
                     Log.d(TAG, "La posición es $latitud ,  $longitud")
@@ -83,6 +97,31 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+        suspend fun apiConsult() {
+            val consulta = userDao.getCinema()
+            Log.i(TAG, "consulta de prueba")
+            Log.i(TAG, consulta.first().toString())
+        }
+
+        GlobalScope.launch {
+            try {
+                apiCharge()
+                val numeroEntradas = userDao.getCount()
+                if (numeroEntradas != 0){
+                Log.d(TAG, "numero entradas "+ numeroEntradas)}
+
+
+                else{
+                    Log.w(TAG,"Base de datos vacía")
+                }
+                val consulta = userDao.getCinema()
+                Log.d(TAG, consulta.first().toString())
+
+            }catch (e:Exception){
+                Log.d(TAG,e.message.toString())
+            }
+
+        }
 
 
         val nombre = this.intent.extras?.getString("email")

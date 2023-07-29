@@ -22,11 +22,16 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.content.ContextCompat.getColor
 import androidx.core.content.ContextCompat.getSystemService
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
 import com.example.buscadorpeliculas.mainContent.MainActivity
 import com.example.buscadorpeliculas.R
 import com.example.buscadorpeliculas.R.color.grey
 import com.example.buscadorpeliculas.R.color.primaryColor
 import com.example.buscadorpeliculas.R.color.secundaryColor
+import com.example.buscadorpeliculas.databinding.ActivityLoginBinding
+import com.example.buscadorpeliculas.databinding.ActivityMainBinding
+import com.example.buscadorpeliculas.mainContent.AccountFragment
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 import com.google.firebase.FirebaseApp
@@ -42,9 +47,10 @@ import java.util.Date
 import java.util.Locale
 
 class loginActivity : AppCompatActivity() {
-    lateinit var auth: FirebaseAuth
+
+    /*lateinit var auth: FirebaseAuth*/
     private lateinit var fusedLocationClient : FusedLocationProviderClient
-    private lateinit var binding:Binding
+    private lateinit var binding:ActivityLoginBinding
     lateinit var bundle: Bundle
 
 
@@ -52,13 +58,14 @@ class loginActivity : AppCompatActivity() {
     @SuppressLint("ResourceAsColor")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login)
+        binding = ActivityLoginBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
 
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
 
-        FirebaseApp.initializeApp(this)
-        auth = Firebase.auth
+       /* FirebaseApp.initializeApp(this)
+        auth = Firebase.auth*/
 
 
         ColorBank.primaryColor = Color.valueOf(R.color.primaryColor)
@@ -75,21 +82,21 @@ class loginActivity : AppCompatActivity() {
 
         val linearLayout = findViewById<LinearLayout>(R.id.linearLayoutTop)
 
-        val emailLoginLabel = findViewById<TextView>(R.id.emailLoginLabel)
+      /*  val emailLoginLabel = findViewById<TextView>(R.id.emailLoginLabel)
         val emailLogin = findViewById<EditText>(R.id.loginEmail)
         val userLoginLabel = findViewById<TextView>(R.id.userLabelLogin)
         val userLogin = findViewById<EditText>(R.id.userEditTextLogin)
-
+*/
         val enterWithAccountBtn = findViewById<Button>(R.id.enterWithAccountButton)
         val enterWithoutAccountBtn = findViewById<Button>(R.id.enterWithoutAccountButton)
 
-        val enterButton = findViewById<Button>(R.id.loginButton)
+       /* val enterButton = findViewById<Button>(R.id.loginButton)
         val registerButton = findViewById<Button>(R.id.registerButton)
 
 
         val passwordLoginLabel = findViewById<TextView>(R.id.passwordLabelLogin)
         val passwordLogin = findViewById<EditText>(R.id.loginPassword)
-        val switchAccount = findViewById<Switch>(R.id.accountSwitch)
+        val switchAccount = findViewById<Switch>(R.id.accountSwitch)*/
 
 
         val params1 = enterWithAccountBtn.layoutParams as LinearLayout.LayoutParams
@@ -114,14 +121,16 @@ class loginActivity : AppCompatActivity() {
 
             params2.weight = 1f
 
-            userLoginLabel.visibility = View.VISIBLE
+
+
+            /*userLoginLabel.visibility = View.VISIBLE
             userLogin.visibility = View.VISIBLE
             emailLogin.visibility = View.VISIBLE
             emailLoginLabel.visibility = View.VISIBLE
             passwordLoginLabel.visibility = View.VISIBLE
             passwordLogin.visibility = View.VISIBLE
-            switchAccount.visibility = View.VISIBLE
-
+            switchAccount.visibility = View.VISIBLE*/
+            loadFragment(AccountLoginFragment())
             linearLayout.requestLayout()
         }
 
@@ -131,7 +140,9 @@ class loginActivity : AppCompatActivity() {
             params1.weight = 1f
             params2.weight = 2f
 
-            userLoginLabel.visibility = View.INVISIBLE
+            loadFragment(NoAccountLoginFragment())
+
+            /*userLoginLabel.visibility = View.INVISIBLE
             userLogin.visibility = View.GONE
 
             emailLogin.visibility = View.INVISIBLE
@@ -142,7 +153,7 @@ class loginActivity : AppCompatActivity() {
 
             enterButton.visibility = View.VISIBLE
             registerButton.visibility=View.GONE
-            switchAccount.visibility = View.INVISIBLE
+            switchAccount.visibility = View.INVISIBLE*/
 
             linearLayout.requestLayout()
 
@@ -151,6 +162,7 @@ class loginActivity : AppCompatActivity() {
 
 
 
+/*
 
         switchAccount.setOnCheckedChangeListener { _, isChecked->
             if(isChecked){
@@ -158,7 +170,8 @@ class loginActivity : AppCompatActivity() {
                 emailLogin.visibility = View.INVISIBLE
                 enterButton.visibility= View.VISIBLE
                 registerButton.visibility = View.GONE
-                /*enterButton.setOnClickListener {
+                */
+/*enterButton.setOnClickListener {
             val emailTest = emailLogin.text.toString()
             val passwordTest = passwordLogin.text.toString()
             Log.d(TAG, "Datos ingresados" + emailTest + "  " + passwordTest)
@@ -178,7 +191,8 @@ class loginActivity : AppCompatActivity() {
                     }
 
             }
-        }*/
+        }*//*
+
 
             }else{
                 emailLoginLabel.visibility = View.VISIBLE
@@ -188,11 +202,12 @@ class loginActivity : AppCompatActivity() {
 
             }
         }
+*/
 
         
        
 
-        registerButton.setOnClickListener {
+      /*  registerButton.setOnClickListener {
 
             auth.createUserWithEmailAndPassword(emailLogin.text.toString(), passwordLogin.text.toString())
                 .addOnCompleteListener(this) { task ->
@@ -216,7 +231,7 @@ class loginActivity : AppCompatActivity() {
                 Log.w(TAG,"APLICACION NO INICIALIZADA")
 
         }
-        }
+        }*/
 
 
 
@@ -285,8 +300,25 @@ class loginActivity : AppCompatActivity() {
         private const val REQUEST_LOCATION_PERMISSION = 1001
     }
 
+    //Cambios de Fragment
+    //Pantalla login
+
+    fun loadFragment(fragment:Fragment){
+        val fragmentManager = supportFragmentManager
+        val fragmentTransaction = fragmentManager.beginTransaction()
+        fragmentTransaction.replace(R.id.frameContentLogin, fragment)
+        fragmentTransaction.commit()
+    }
+
+
 
 }
+
+
+
+
+
+
 
 
 
