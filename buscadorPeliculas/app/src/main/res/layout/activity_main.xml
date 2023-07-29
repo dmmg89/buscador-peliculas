@@ -4,19 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/backgroundMain"
-    tools:context=".MainActivity">
+    android:background="@color/white"
+    tools:context=".mainContent.MainActivity">
 
 
     <FrameLayout
         android:id="@+id/topContainer"
         android:layout_width="0dp"
-        android:layout_height="60dp"
-
+        android:layout_height="80dp"
+        android:background="@color/backLightColor"
         app:layout_constraintBottom_toTopOf="@id/frame_layout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="8dp"
+        android:padding="8dp"
+        >
 
     </FrameLayout>
 
